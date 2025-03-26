@@ -21,7 +21,6 @@ class Account(metaclass = ABCMeta):
 
 class SavingsAccount(Account):
     def __init__(self):
-        # [key][0] => name ; [key][1] => balance
         self.savingsAccounts = {}
     def createAccount(self, name, initialDeposit):
         print()
