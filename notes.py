@@ -1,13 +1,25 @@
-class Car:
-    number_of_wheels = 4
-    _color = "black"
-    __year = 1017
+from abc import ABCMeta, abstractmethod
 
-class BMW(Car):
-    def __init__(self):
-        print(self._color)
 
-car = Car()
-print(car.number_of_wheels)
-bmw = BMW()
-print(car._Car__year)
+
+class Shape(metaclass = ABCMeta):
+    @abstractmethod
+    def area(self):
+        return 0
+
+class Square(Shape):
+    side = 4
+    def area(self):
+        print(self.side * self.side)
+
+
+class Rectangle(Shape):
+    width = 5
+    lenght = 10
+    def area(self):
+        print(self.width *self.lenght)
+
+square = Square()
+rectangle = Rectangle()
+square.area()
+rectangle.area()
